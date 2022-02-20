@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face-Off</title>
+    <style>
+      @media only screen and (max-width: 530px) {
+        #targett1 {
+          width: 80%;
+          height: 600px;
+          margin: auto;
+        }
+      }
+      @media only screen and (min-width: 530px) {
+        #targett1 {
+          width: 500px;
+          height: 600px;
+          margin: auto;
+        }
+      }
+
+      .slctbox {
+        border-radius: 20%;
+        text-align: center;
+        border: 0;
+        background-color: blueviolet;
+        padding: 1vh 2vw;
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      style="
+        padding: 5vh 0;
+        text-align: center;
+
+        margin: auto;
+        background-color: aqua;
+      "
+    >
+      <p
+        style="
+          padding: 0 5vw;
+          display: inline;
+          color: red;
+          font-size: larger;
+          font-style: italic;
+          font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+            sans-serif;
+          border: 5px double blueviolet;
+        "
+      >
+        Check your photo here
+      </p>
+      <br /><br />
+      <p style="display: inline; color: blueviolet; font-weight: bold">
+        Select Your Name from the list
+      </p>
+
+      <select id="name1" name="name1" class="slctbox">
+        <option value="empty"></option>
+        <option value="Kanishka">Kanishka</option>
+        <option value="Kamali">Kamali</option>
+        <option value="Prema">Prema</option>
+        <option value="Ravi">Ravi</option>
+      </select>
+
+      <br />
+      <br />
+      <button
+        type="button"
+        id="btnn1"
+        style="
+          border-radius: 20%;
+          text-align: center;
+          border: 0;
+          background-color: blueviolet;
+          padding: 1vh 2vw;
+          color: aqua;
+        "
+      >
+        Click to see your photo
+      </button>
+      <br /><br />
+      <button
+        type="button"
+        id="btnn2"
+        style="
+          border-radius: 20%;
+          text-align: center;
+          border: 0;
+          background-color: blueviolet;
+          padding: 1vh 2vw;
+          color: aqua;
+        "
+      >
+        Clear
+      </button>
+      <br /><br />
+      <!-- <button
+        type="button"
+        id="btnn3"
+        value="on"
+        style="
+          border-radius: 20%;
+          text-align: center;
+          border: 0;
+          background-color: pink;
+          padding: 1vh 2vw;
+          color: red;
+        "
+      ></button> -->
+      <div
+        id="targett1"
+        style="background-color: blueviolet; border: 5px double aqua"
+      >
+        <br /><br />
+        <br />
+        Photo Frame
+      </div>
+    </div>
+
+    <script>
+      var a;
+      var b;
+      var c;
+      var d;
+      var e;
+      document.querySelector("#btnn1").addEventListener("click", () => {
+        c = parseInt(Math.random() * 10);
+        document.querySelector("#targett1").innerHTML = "";
+        if (document.querySelector("#name1").value == "empty") {
+          document.querySelector("#targett1").innerHTML =
+            "<br>" + "<br>" + "Select a Name from the list";
+        } else if (c < 4) {
+          b = document.createElement("img");
+          b.setAttribute("src", "image/image5.jpg");
+          b.setAttribute("width", "100%");
+          b.setAttribute("height", "100%");
+
+          targett1.prepend(b);
+        } else {
+          a = document.querySelector("#name1").value;
+
+          switch (a) {
+            case "Kanishka":
+              b = document.createElement("img");
+              b.setAttribute("src", "image/image1.jpg");
+              b.setAttribute("width", "100%");
+              b.setAttribute("height", "100%");
+
+              targett1.prepend(b);
+              break;
+            case "Kamali":
+              b = document.createElement("img");
+              b.setAttribute("src", "image/image2.jpg");
+              b.setAttribute("width", "100%");
+              b.setAttribute("height", "100%");
+
+              targett1.prepend(b);
+              break;
+            case "Prema":
+              b = document.createElement("img");
+              b.setAttribute("src", "image/image3.jpg");
+              b.setAttribute("width", "100%");
+              b.setAttribute("height", "100%");
+
+              targett1.prepend(b);
+              break;
+            case "Ravi":
+              b = document.createElement("img");
+              b.setAttribute("src", "image/image4.jpg");
+              b.setAttribute("width", "100%");
+              b.setAttribute("height", "100%");
+
+              targett1.prepend(b);
+
+              break;
+            default:
+          }
+        }
+      });
+      document.querySelector("#btnn2").addEventListener("click", () => {
+        document.querySelector("#name1").value = "";
+        document.querySelector("#targett1").innerHTML =
+          "<br>" + "<br>" + " Photo Frame";
+      });
+      //   document.querySelector("#btnn3").addEventListener("click", () => {});
+    </script>
+  </body>
+</html>
